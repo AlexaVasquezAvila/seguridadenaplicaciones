@@ -1,18 +1,18 @@
 # Sistema de Registro de Usuarios en PHP
 
-## 📌 Descripción del Proyecto
+## Descripción del Proyecto
 
 Este proyecto es una aplicación web desarrollada en **PHP** y **MySQL**, cuyo objetivo es gestionar el registro, autenticación y recuperación de contraseñas de usuarios. Se han aplicado técnicas de **validación, filtrado de datos y consultas preparadas** para garantizar la seguridad y protección de la base de datos contra ataques de **SQL Injection**.
 
-## 🎯 Objetivo del Proyecto
+## Objetivo del Proyecto
 
 Desarrollar una aplicación web que implemente **escapado, validación y filtrado de datos**, asegurando un correcto comportamiento del servidor al procesar la información y protegiendo la base de datos contra ataques malintencionados.
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 El proyecto está compuesto por los siguientes archivos y carpetas principales:
 
-### **📌 Archivos principales**
+### **Archivos principales**
 
 - `index.php` → Formulario de **registro de usuarios**.
 - `login.php` → Formulario de **inicio de sesión**.
@@ -36,52 +36,52 @@ La base de datos se creó en **MySQL** y contiene la tabla `usuarios` con los si
 - `token` (VARCHAR, para recuperación de contraseña)
 - `token_expira` (DATETIME, fecha de expiración del token)
 
-## ✅ **Funcionalidades Implementadas**
+## **Funcionalidades Implementadas**
 
-### **1️⃣ Creación de Base de Datos y Preparación del Entorno**
+### **1️ Creación de Base de Datos y Preparación del Entorno**
 
-✔️ Se configuró **XAMPP** para ejecutar Apache y MySQL.  
-✔️ Se creó la base de datos `usuarios_db` y la tabla `usuarios`.
+Se configuró **XAMPP** para ejecutar Apache y MySQL.  
+Se creó la base de datos `usuarios_db` y la tabla `usuarios`.
 
-### **2️⃣ Desarrollo del Formulario de Registro e Inicio de Sesión**
+### **2️ Desarrollo del Formulario de Registro e Inicio de Sesión**
 
-✔️ Se implementaron **campos obligatorios** y **tipos de entrada adecuados** para capturar **nombres, correos electrónicos y contraseñas**.  
-✔️ Se usó **Bootstrap** para mejorar la apariencia del formulario.  
-✔️ Se validó en el servidor (PHP) que los **campos no estén vacíos** y cumplan con los requisitos.
+Se implementaron **campos obligatorios** y **tipos de entrada adecuados** para capturar **nombres, correos electrónicos y contraseñas**.  
+Se usó **Bootstrap** para mejorar la apariencia del formulario.  
+Se validó en el servidor (PHP) que los **campos no estén vacíos** y cumplan con los requisitos.
 
-### **3️⃣ Validaciones de Seguridad en PHP**
+### **3️ Validaciones de Seguridad en PHP**
 
-✔️ Se validan valores de entrada **evitando caracteres especiales** no permitidos.  
-✔️ Se **sanitizan los inputs** con `filter_var()` para evitar ataques XSS.  
-✔️ Se implementó el uso de **`password_hash()` y `password_verify()`** para proteger las contraseñas.
+Se validan valores de entrada **evitando caracteres especiales** no permitidos.  
+ Se **sanitizan los inputs** con `filter_var()` para evitar ataques XSS.  
+ Se implementó el uso de **`password_hash()` y `password_verify()`** para proteger las contraseñas.
 
-### **4️⃣ Protección contra SQL Injection**
+### **4️ Protección contra SQL Injection**
 
-✔️ Se usaron **consultas preparadas (`prepare()` y `bind_param()`)** en todas las consultas SQL.
-✔️ Se evitó el uso de `query()` con datos sin sanitizar.
+Se usaron **consultas preparadas (`prepare()` y `bind_param()`)** en todas las consultas SQL.
+Se evitó el uso de `query()` con datos sin sanitizar.
 
-### **5️⃣ Recuperación de Contraseñas**
+### **5️ Recuperación de Contraseñas**
 
-✔️ Se implementó la funcionalidad de **recuperación de contraseña** mediante el envío de un token.  
-✔️ Se generaron **tokens únicos** con `bin2hex(random_bytes(50))` y fecha de expiración.  
-✔️ Se validó la autenticidad del token antes de restablecer la contraseña.
+Se implementó la funcionalidad de **recuperación de contraseña** mediante el envío de un token.  
+ Se generaron **tokens únicos** con `bin2hex(random_bytes(50))` y fecha de expiración.  
+ Se validó la autenticidad del token antes de restablecer la contraseña.
 
-### **6️⃣ Cierre de Sesión y Manejo de Cookies**
+### **6️ Cierre de Sesión y Manejo de Cookies**
 
-✔️ Se implementó el **cierre de sesión seguro (`session_destroy()`).**  
-✔️ Se agregó la opción de **“Recordar usuario”** mediante cookies.
+Se implementó el **cierre de sesión seguro (`session_destroy()`).**  
+ Se agregó la opción de **“Recordar usuario”** mediante cookies.
 
-## 📌 Instalación y Uso
+## Instalación y Uso
 
-### **1️⃣ Requisitos Previos**
+### **1️ Requisitos Previos**
 
-🔹 Tener instalado **XAMPP** o cualquier servidor Apache con PHP y MySQL.  
-🔹 Clonar este repositorio o descargar los archivos manualmente.
+Tener instalado **XAMPP** o cualquier servidor Apache con PHP y MySQL.  
+Clonar este repositorio o descargar los archivos manualmente.
 
-### **2️⃣ Configuración de la Base de Datos**
+### **2️ Configuración de la Base de Datos**
 
-1️⃣ Abrir `phpMyAdmin` y crear una base de datos llamada `usuarios_db`.  
-2️⃣ Ejecutar el siguiente SQL en la pestaña **SQL**:
+1️ Abrir `phpMyAdmin` y crear una base de datos llamada `usuarios_db`.  
+2️ Ejecutar el siguiente SQL en la pestaña **SQL**:
 
 ```sql
 CREATE TABLE usuarios (
@@ -115,7 +115,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 http://localhost/registro_usuarios/index.php
 ```
 
-## 📌 Subida del Proyecto a GitHub
+## Subida del Proyecto a GitHub
 
 Para subir este proyecto a un repositorio público en **GitHub**, sigue estos pasos:
 
@@ -135,7 +135,7 @@ conexion.php
 .env
 ```
 
-## 📌 Buenas Prácticas Aplicadas
+## Buenas Prácticas Aplicadas
 
 ✔️ Uso de **Programación Orientada a Objetos (POO)** en la conexión a la base de datos.  
 ✔️ **Código modular y reutilizable** con funciones organizadas.  
